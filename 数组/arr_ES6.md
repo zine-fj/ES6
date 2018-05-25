@@ -1,4 +1,4 @@
-##### ES6里新增的数组
+## ES6里新增的数组
 
 ``` shell
 let arrStr = ['apple','banana','orange','tomato'];
