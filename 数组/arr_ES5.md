@@ -1,7 +1,8 @@
-#### ES5里新增的数组
+## ES5里新增的数组
 
-1 - 5接收的参数一样，均为(val,index,arr)；一般情况下用1 - 2最多。  
-val：当前的val值；index：当前的index值；arr：循环的数组（一般不用）。  
+1-5接收的参数一样,均为(val,index,arr),一般情况下用1-2 最多。  
+val：当前的val值;  index：当前的index值;  arr：循环的数组(一般不用)。  
+
 ``` shell
 let arrStr = ['apple','banana','orange','tomato'];
 let arrJson = [
