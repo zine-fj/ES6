@@ -1,12 +1,7 @@
-## 数组刚开始固有的属性
+## 数组本身固有的一些用法
 
 ``` shell
 let arrStr = ['apple','banana','orange','tomato'];
-let arrJson = [
-        {title:'aaaaa',read:100,hot:true},
-        {title:'bbbbb',read:100,hot:false},
-        {title:'ccccc',read:100,hot:true}
-    ];
 let arrNum = [1,3,5,7,9];
 ```
 
