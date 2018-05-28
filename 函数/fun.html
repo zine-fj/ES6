@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        function show(a,b) {
+            console.log(a,b)
+        }
+        show('welcome','牧马人') // welcome 牧马人
+        show('welcome','') // welcome
+        show('','牧马人') // 牧马人
+        show('welcome') // welcome undifined
+
+        function show1(a = '欢迎',b = 'mmr') {
+            console.log(a,b);
+        }
+        show1('welcome','牧马人'); // welcome 牧马人
+        show1('welcome',''); // welcome
+        show1('welcome',); // welcome mmr
+        // show1(,'牧马人'); // 报错
+
+        function show2({x = 0,y = 1} = {}) {
+            console.log(x,y) // 0 1
+        }
+        show2();
+
+        function show3(a = 13) {
+            // let a = 5; // 报错
+            console.log(a);
+        }
+        show3();
+
+        // 箭头函数
+        function fun(a,b) {
+            return a+b;
+        }
+        console.log(fun(1,2)) // 3
+
+        function fun1(a=1,b=2) {
+            return a+b;
+        }
+        console.log(fun1()) // 3
+
+        let json = {
+            id:1,
+            oJson: function() {
+                setTimeout(function() {
+                    alert(this.id); // undefined
+                },1000)
+            }
+        }
+        json.oJson()
+
+        let json1 = {
+            id:1,
+            oJson: function() {
+                setTimeout(() => {
+                    alert(this.id); // 1
+                },1000)
+            }
+        }
+        json1.oJson()
+
+        function arg() {
+            console.log(arguments);
+        }
+        arg(1,2,3,4,5)
+
+        let oArg = (...args)=>{
+            console.log(args); // [1, 2, 3, 4, 5]
+        }
+        oArg(1,2,3,4,5);
+
+        // 箭头函数不能当构造函数
+        function arg1() {
+            this.name = 'abc';
+        }
+        let s = new arg1();
+        console.log(s.name); // abc
+
+        let arg2 = ()=>{
+            this.name = 'abc';
+        }
+        // let s1 = new arg2();
+        // console.log(s1.name) // 报错
+
+        // 函数参数最后逗号
+        let arg3 = (a,b,c,)=>{
+            console.log(a,b,c); // 1 2 3
+        };
+        arg3(1,2,3)
+
+
+        // 扩展运算符（三个点）
+        // 展开 [1,2,3,4,5]  ...[1,2,3,4,5] => 1,2,3,4,5
+        let arr = ['apple','banana','orange'];
+        console.log(arr); // ["apple", "banana", "orange"]
+        console.log(...arr); // apple banana orange
+        
+        // 收起 1,2,3,4,5  ...a  => [1,2,3,4,5]
+        function show4(...a) {
+            console.log(a) // [1, 2, 3, 4, 5]
+        }
+        show4(1,2,3,4,5);
+
+        function show5(...a) {
+            return a.sort();
+        }
+        console.log(show5(1,6,3,5,2));
+
+        function show6(a,b,c) {
+            console.log(a,b,c); // 1 9 8
+        }
+        show6(...[1,9,8])
+        
+        // 剩余运算符
+        function show7(a,b,...c) {
+            console.log(a,b); // 1 2
+            console.log(c); // [3,4,5]
+            console.log(...c); // 3 4 5
+        }
+        show7(1,2,3,4,5);
+
+        // 复制数组
+        let oArr = [1,2,3,4,5];
+        let oArr1 = [...oArr];
+        console.log(oArr1) // [1,2,3,4,5]
+    </script>
+</body>
+</html>
