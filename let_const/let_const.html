@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 12;
+        function fn() {
+            console.log(a); // undefind 因为有预解析
+            var a = 5;
+        }
+        fn();
+
+        if(true) {
+            var a1 = 12;
+        }
+        console.log(a1); // 12
+
+        var a2 = 3;
+        var a2 = 4;
+        console.log(a2); // 4
+
+        var arr = [];
+        for(var i = 0; i < 10; i++) {
+            arr[i] = function() {
+                console.log(i); // 10
+            }
+        }
+        arr[5]();
+
+
+
+        let b = 1;
+        
+        // 块级作用域
+        if(true) {
+            let b1 = 1;
+        }
+        // console.log(b1); // 报错
+
+        let c = 2;
+        function fnc() {
+            console.log(c); // 2
+        }
+        fnc();
+        
+        // 1、暂时性死区
+        let c1 = 2;
+        function fnc1() {
+            console.log(c1); // 报错 ReferenceError
+            // let c1 = 3;
+        }
+        fnc1();
+        
+        // 2、重复定义变量
+        let d = 1;
+        // let d = 2;
+        // console.log(d); //报错 SyntaxError
+
+        for(let i = 0; i < 2; i++) {
+            console.log(i); // 0 1
+        }
+        // console.log(i); // 报错 ReferenceError
+
+        for(let i = 0; i < 2; i++) {
+            let i = 'abc'; 
+            console.log(i); // abc abc
+        }
+
+        let arr1 = [];
+        for(let i = 0; i < 10; i++) {
+            arr1[i] = function() {
+                console.log(i); // 5
+            }
+        }
+        arr1[5]();
+
+        // const
+        const e = 1;
+        // e = 2; // 报错
+
+        const f = 1;
+        function fnc() {
+            const f = 2;
+            console.log(f); // 2
+        };
+        fnc();
+
+        const arrc = ['apple','banana','orange'];
+        arrc.push('tomato')
+        console.log(arrc);
+
+        const arrd = Object.freeze(['apple','banana','orange']);
+        // arrd.push('tomato') // 报错
+    </script>
+</body>
+</html>
