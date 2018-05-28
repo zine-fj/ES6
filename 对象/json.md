@@ -45,7 +45,7 @@
     let arr2 = Object.assign([],arr);
 ```
 4. ES2017引入以下内容。  
-1、Object.keys();2、Object.entries();3、Object.values();
+1、Object.keys()；2、Object.entries()；3、Object.values();
 ``` shell
     # 基本用法
     let json04 = {
@@ -78,7 +78,7 @@
         console.log(key,val)
     }
 ```
-1. (...)在对象身上也可以用了，计划在ES2018引入。
+5. (...)在对象身上也可以用了，计划在ES2018引入。
 ``` shell
     let {i,j,...k} = {i:1,j:2,k1:3,k2:4};
 
