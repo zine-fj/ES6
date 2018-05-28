@@ -21,8 +21,8 @@ let arrNum = [1,3,5,7,9];
 ```
 3. shift() 和 unshift()
 ``` shell
-    // shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined 。 
-    // unshift()：将参数添加到原数组开头，并返回数组的长度 。
+    // shift()：删除原数组第一项，并返回删除元素的值；如果数组为空则返回undefined。 
+    // unshift()：将参数添加到原数组开头，并返回数组的长度。
     let arrUnshift = arrStr.unshift('no-bad','bad');
     let arrShift = arrStr.shift();
 ```
