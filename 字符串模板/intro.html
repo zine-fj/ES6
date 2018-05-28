@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串模板</title>
+</head>
+<body>
+    <ul id="list">
+        <li>
+            <span></span>
+            <span></span>
+            <a href="javascript:;">详情</a>
+        </li>
+    </ul>
+    <script>
+        let name = 'fj';
+        let age = 18;
+        let str = '我叫xxx，今年xx岁';
+        let str1 = '我叫'+ name +'，今年'+ age +'岁';
+        let str2 = `我叫${name}，今年${age}岁`;
+        console.log(str);
+        console.log(str1);
+        console.log(str2);
+        
+        let data = [
+            {title:'习近平将主持上合青岛峰会',read:100},
+            {title:'西安4月房价同比涨73.89%全国第一 ',read:9},
+            {title:'美舰擅入西沙群岛领海 我军警告驱离',read:10},
+            {title:'这2年 澳为何频频敌视中国',read:900}
+        ]
+        let oList = document.querySelector('#list');
+        for(let i = 0; i < data.length; i++) {
+            let oLi = document.createElement('li');
+            oLi.innerHTML = `<span>${data[i].title}</span>
+                             <span>${data[i].read}</span>
+                             <a href="#">详情</a>`
+            oList.appendChild(oLi)
+        }
+
+        let oStr = 'apple banana2 pear';
+        console.log(oStr.includes('banana')) // true
+
+        if(navigator.userAgent.includes('Chrome')) {
+            alert('是Chrome')
+        } else {
+            alert('不是Chrome')
+        }
+
+        let aaa = 'aaa.png';
+        console.log(aaa.endsWith('png')); //true
+
+        let bbb = '附件';
+        console.log(bbb.repeat(1)); // 附件
+        
+        console.log('a'.padStart(4,'xxx')); // xxxa
+
+        let oStr1 = 'a';
+        let padStr = 'xxx';
+        console.log(oStr1.padEnd(oStr1.length + padStr.length,padStr)) // axxx
+    </script>
+</body>
+</html>
