@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象</title>
+</head>
+<body>
+    <script>
+        // 简洁语法1
+        let name = 'fj';
+        let age = 18;
+        
+        // 之前写法
+        let json = {
+            name : name,
+            age : age,
+            showA:function() {
+                return this.name;
+            }
+
+        }
+        console.log(json); // {name: "fj", age: 18, showA: ƒ}
+        console.log(json.showA()); // fj
+
+        // 现在写法
+        let json1 = {
+            name,
+            age,
+            showB() {
+                return this.name;
+            }
+        }
+        console.log(json1); // {name: "fj", age: 18, showA: ƒ}
+        console.log(json1.showB()); // fj
+
+        // 简洁语法2
+        let x = 10;
+        let y = 20;
+        let show = ({x,y})=>{
+            console.log(x,y) // 10 20
+        };
+        show({x,y})
+        
+        // Object.is();
+        console.log(NaN == NaN) // false
+        console.log(Number.isNaN(NaN)); // true
+        let b = Object.is(NaN,NaN);
+        console.log(b); // true
+
+        console.log(+0 == -0); // true
+        let c = Object.is(+0,-0);
+        console.log(c); // false
+
+        console.log(Object.is('aaa','aaa')); // true
+
+
+        // Object.assign();
+        let json01 = {a:1};
+        let json02 = {b:2};
+        let json03 = {c:3};
+
+        let obj = Object.assign({},json01,json02,json03);
+        console.log(obj); // {a: 1, b: 2, c: 3}
+
+        let arr = ['apple','banana','orange'];
+        let arr2 = Object.assign([],arr);
+        console.log(arr2); // ["apple", "banana", "orange"]
+
+        // Object.keys();
+        let json04 = {
+            a:1,
+            b:2,
+            c:3
+        };
+
+        for(let key of Object.keys(json04)) {
+            console.log(key) // a b c
+        }
+
+        // 1、Object.keys();2、Object.entries();3、Object.values();
+        let {keys,values,entries} = Object;
+
+        for(let key of keys(json04)) {
+            console.log(key) // a b c
+        }
+
+        for(let value of values(json04)) {
+            console.log(value) // 1 2 3
+        }
+
+        for(let item of entries(json04)) {
+            console.log(item) // ["a",1] ["b",2] ["c",3] 
+        }
+
+        for(let [key,val] of entries(json04)) {
+            console.log(key,val) // a 1 b 2 c 3
+        }
+
+        // 在对象身上可以用...
+        let {i,j,...k} = {i:1,j:2,k1:3,k2:4};
+        console.log(i,j,k)
+
+
+    </script>
+</body>
+</html>
