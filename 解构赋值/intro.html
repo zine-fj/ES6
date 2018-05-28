@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3]
+        console.log(arr[0],arr[1],arr[2]); // 1 2 3
+
+        let [a,b,c] = [4,5,6];
+        console.log(a,b,c); // 4 5 6
+
+        let [a1,[b1,c1]] = [7,[8,9]];
+        console.log(a1,b1,c1); // 7 8 9
+
+        let json = {
+            name: 'fj',
+            age: 25,
+            job: '码农'
+        };
+        let {name,age,job} = json;
+        console.log(name,age,job); // fj 25 码农
+        let {name:n1,age:n2,job:n3} = json;
+        console.log(n1,n2,n3);
+
+        let [d,e,f='暂无数据'] = ['aa','bb'];
+        console.log(d,e,f)
+
+        let [d1,e1,f1='暂无数据'] = ['aa','bb',undefined];
+        console.log(d1,e1,f1)
+
+        let x = 1;
+        let y = 2;
+        [x,y] = [y,x];
+        console.log(x,y);
+
+        function getPos() {
+
+            return {
+                left: 10,
+                top1: 20
+            }
+        }
+
+        let {left ,top1} = getPos();
+        console.log(left,top1);
+
+        function show({x2='moren',y2='moren'}) {
+            console.log(x2,y2)
+        }
+        show({})
+    </script>
+</body>
+</html>
