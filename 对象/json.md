@@ -22,7 +22,7 @@
         }
     }
 ```
-2. Object.is(): 用来比较两个值是否相等(肉眼看到相等即相等)。
+2. Object.is(): 用来比较两个值是否相等(肉眼看到相等即相等)。  
 写法：Object.is('a','a');
 ``` shell
     #  将NaN处理了
@@ -31,7 +31,7 @@
 
     console.log(Object.is(+0,-0)); // false
 ```
-3. Object.assign(): 用来合并对象。
+3. Object.assign(): 用来合并对象。  
 写法：Object.assign(目标对象,source1,source2...); 
 ``` shell
     #  合并参数
@@ -44,7 +44,7 @@
     let arr = ['apple','banana','orange'];
     let arr2 = Object.assign([],arr);
 ```
-4. ES2017引入以下内容。
+4. ES2017引入以下内容。  
 1、Object.keys();2、Object.entries();3、Object.values();
 ``` shell
     # 基本用法
