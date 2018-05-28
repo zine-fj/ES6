@@ -28,7 +28,7 @@
     }
     console.log(fun(1,2)))
 
-    // 1、this问题，定义函数所在对象，不再是运行时所在的对象
+    # 1、this问题，定义函数所在对象，不再是运行时所在的对象
     let json = {
         id:1,
         oJson: function() {
