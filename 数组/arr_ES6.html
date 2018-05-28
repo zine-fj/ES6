@@ -25,7 +25,24 @@
         let arrNum = [1,3,5,7,9];
         let aLi = document.querySelectorAll('ul li');
 
-        // 1、扩展运算符 ...；Array.from
+        // 1、for...of...
+        // 循环值。
+        for(let val of arrStr) {
+            console.log(val); // apple banana orange tomato
+        };
+        // 循环索引。
+        for(let index of arrStr.keys()) {
+            console.log(index); // 0 1 2 3
+        };
+        // 循环索引 + 值。
+        for(let item of arrStr.entries()) {
+            console.log(item); // [0,"apple"] [1,"banana"] ...
+        };
+        for(let [key,val] of arrStr.entries()) { // chrom45版本未支持[]写法
+            console.log(key,val); // 0 "apple" 1 "banana" ...
+        }
+
+        // 2、扩展运算符 ...；Array.from
         // 类数组：NodeList，获取到的DOM节点列
         console.log(aLi); //数据类型NodeList，类数组，不能进行数组的一些操作。
 
@@ -57,48 +74,32 @@
             length: 3 //没有的话，转为的数组为空。
         };
         let arrJson1 = Array.from(json); // 转为数组
+        console.log(arrJson1) // ["apple","banana","orange"]
         
-        // 2、Array.of()
+        // 3、Array.of()
         let arrOf = Array.of('apple','banana','orange');
-        console.log(arrOf);
+        console.log(arrOf); // ["apple","banana","orange"]
 
-        // 3、Array.find()
+        // 4、Array.find()
         let arrFind = arrNum.find((val,index,arr)=>{
-            return val > 10; 
+            return val > 3; 
         });
-        console.log(arrFind);
+        console.log(arrFind); // 5
 
-        // 4、Array.findIndex()
+        // 5、Array.findIndex()
         let arrFindIndex = arrNum.findIndex((val,index,arr)=>{
             return val > 3; 
         });
-        console.log(arrFindIndex);
+        console.log(arrFindIndex); // 2
 
-        // 5、arr.fill()
+        // 6、arr.fill()
         let arrFill = new Array(10);
-        arrFill.fill('默认值',1,3); // (从1开始到3结束，不包括3)
-        console.log(arrFill);
+        arrFill.fill('默认值',1,3); //
+        console.log(arrFill); // [empty,"默认值","默认值",empty * 7]
 
-        // 6、arr.includes()
+        // 7、arr.includes()
         let arrIncludes = arrStr.includes('orange');
-        console.log(arrIncludes);
-        
-        // 7、for...of...
-        // 循环值。
-        for(let val of arrStr) {
-            console.log(val);
-        };
-        // 循环索引。
-        for(let index of arrStr.keys()) {
-            console.log(index);
-        };
-        // 循环索引 + 值。
-        for(let item of arrStr.entries()) {
-            console.log(item);
-        };
-        for(let [key,val] of arrStr.entries()) { // chrom45版本未支持[]写法
-            console.log(key,val);
-        }
+        console.log(arrIncludes); // true
     </script>
 </body>
 </html>
