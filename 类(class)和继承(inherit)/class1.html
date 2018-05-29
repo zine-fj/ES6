@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class</title>
+</head>
+<body>
+    <script>
+        
+        let aaa = 'strive';
+        let bbb = 'method';
+        class Person{
+            // 构造方法(函数)，调用new，自动执行
+            constructor(name,age) {
+                // 属性
+                this.name = name;
+                this.age = age;
+            }
+
+            // 方法
+            showName() {
+                return `名字为：${this.name}`;
+            }
+            showAge() {
+                return `年龄为：${this.age}`;
+            }
+            aaa() {
+                return '随便了1111'
+            }
+            [bbb]() {
+                return '随便了2222'
+            }
+            [aaa + bbb]() {
+                return '随便了333'
+            }
+        }
+
+        // 调用
+        let p = new Person('fj',18);
+        console.log(p.showName(),p.showAge());
+        console.log(p.aaa());
+        console.log(p.method());
+        console.log(p[bbb]());
+        console.log(p[aaa+bbb]())
+    </script>
+</body>
+</html>

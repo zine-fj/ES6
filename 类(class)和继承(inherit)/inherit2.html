@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>覆盖父类-方法</title>
+</head>
+<body>
+    <script>
+        // 父类
+        class Person{
+            constructor(name) {
+                this.name = name;
+            }
+            showName() {
+                console.log('父类里的showName');
+                return `名字为:${this.name}`;
+            }
+        }
+        // 子类
+        class Student extends Person{
+            constructor(name,skill) {
+                super(name)
+                this.skill = skill
+            }
+            showSkill(){
+                return `技能表现:${this.skill}`;
+            }
+
+            showName() {
+                super.showName(); // 父级方法的执行
+
+                // todo 做子级自己的事情
+                console.log('子类里的showName');
+                return '子类里的返回值'
+            }
+        }
+
+        // 调用
+        let stu1 = new Student('strive','逃学');
+        console.log(stu1.showName())
+    </script>
+</body>
+</html>
