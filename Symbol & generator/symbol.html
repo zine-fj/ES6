@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>symbol</title>
+</head>
+<body>
+    <script>
+        let syml = Symbol('aaa');
+        console.log(typeof syml); // symbol
+
+        let symbol = Symbol('Strive');
+        let json = {
+            a:'apple',
+            b:'banana',
+            [symbol]: 'aaa'
+        };
+        console.log(json.a,json[symbol]) // apple aaa
+
+        for(let key in json) {
+            console.log(key);
+        }
+    </script>
+</body>
+</html>
