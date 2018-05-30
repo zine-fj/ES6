@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async</title>
+</head>
+<body>
+    <script>
+        // async函数返回是一个promise对象
+        async function fn(){
+            return 'welcome';
+        }
+        console.log(fn());  
+        
+        fn().then(res=>{
+            console.log(res);
+        })
+        
+        // 捕获错误
+        async function fn1() {
+            throw new Error('Error出错了1');
+        }
+        fn1().then(res=>{
+            console.log(res);
+        }).catch(err=>{
+            console.log(err)
+        })
+        
+        // 捕获错误
+        async function fn2() {
+            let a = await Promise.resolve('success');
+            console.log(a);
+            await Promise.reject('出现问题了2')
+        }
+        fn2().then(res=>{
+            console.log(res);
+        }).catch(err=>{
+            console.log(err);
+        })
+    </script>
+</body>
+</html>
