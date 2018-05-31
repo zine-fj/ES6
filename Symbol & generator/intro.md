@@ -9,7 +9,7 @@
 ```
 现在新增 symbol (使用情况一般)
 ``` shell
-    let syml = Symbol('aaa);
+    let syml = Symbol('aaa');
 ```
 注意：  
 1. Symbol不能new。
