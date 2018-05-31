@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>set</title>
+</head>
+<body>
+    <script>
+        let setArr = new Set(['a','b','c']);
+        console.log(setArr); // {"a", "b", "c"}
+        
+        // set中不能有重复的
+        let arr = ['a','b','c','a'];
+        console.log(arr); // ["a", "b", "c", "a"]
+        let setArr1 = new Set(['a','b','c','a']);
+        console.log(setArr1); // {"a", "b", "c"}
+
+        // set添加
+        let setArr2 = new Set([]);
+        setArr2.add('a');
+        setArr2.add('b');
+        console.log(setArr2); // {'a','b'}
+        let setArr3 = new Set().add(1).add('2').add('3');
+        console.log(setArr3);
+
+        // set删除
+        setArr2.delete('b');
+        console.log(setArr2); // {'a'}
+
+        // set检测是否有值
+        console.log(setArr2.has('a')); // true
+        console.log(setArr2.has('b')); // false
+
+        // set判断长度
+        console.log(setArr2.size); // 1
+
+        // set清空
+        setArr2.clear()
+        console.log(setArr2.size); // 0
+
+        // set循环
+        for (let item of setArr) { // 默认是values()
+            console.log(item); // a b c
+        }
+        
+        for (let item of setArr.keys()) {
+            console.log(item); // a b c
+        }
+        for (let item of setArr.values()) {
+            console.log(item); // a b c
+        }
+        for (let item of setArr.entries()) {
+            console.log(item); // ["a", "a"] ["b", "b"] ["c", "c"]
+        }
+        for (let [key,val] of setArr.entries()) {
+            console.log(key,val); // a a b b c c
+        }
+
+        setArr.forEach((val,index)=>{
+            console.log(val,index); // a a b b c c
+        })
+
+        // set用处 数组去重
+        let arr1 = [1,2,4,5,6,4,3,5,6,7,9];
+        let newArr = [...new Set(arr1)];
+        console.log(newArr);
+
+        // set应用，数组中map，filter
+        let set = new Set([1,2,3]);
+        let setMap = new Set([...set].map(val=>val*2));
+        console.log(setMap); // 2 4 6
+
+        let setFilter = new Set([...set].filter(val=>val%2==0));
+        console.log(setFilter); // 2
+        
+        let set1 = new Set();
+        let json = {
+            a:1,
+            b:2
+        }
+        set1.add(json);
+        console.log(set1); // {{…}}
+        set1.forEach((item)=>{
+            console.log(item); // {a: 1, b: 2}
+        })
+    </script>
+</body>
+</html>

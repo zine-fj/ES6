@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weakset</title>
+</head>
+<body>
+    <script>
+        // set中可存放{}
+        let set = new Set();
+        let json = {
+            a:1,
+            b:2
+        }
+        set.add(json);
+        console.log(set); // {{…}}
+        set.forEach((item)=>{
+            console.log(item); // {a: 1, b: 2}
+        })
+
+        let set1 = new WeakSet();
+        set1.add(json);
+        console.log(set1); // {{…}}
+    </script>
+</body>
+</html>
