@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a2 = 0b010101;
+        let a8 = 0o666;
+        console.log(a2,a8); // 21 438
+        
+        let n = isNaN(NaN);
+        console.log(n); // true
+        let n1 = Number.isNaN(NaN);
+        console.log(n1); // true   
+
+        // 判断是否为数字
+        let n2 = Number.isFinite(4);
+        let n3 = Number.isFinite('string');
+        let n4 = Number.isFinite(true);
+        console.log(n2,n3,n4); // true false false
+
+        // 判断数字是否为整数
+        let n5 = Number.isInteger(1);
+        let n6 = Number.isInteger(1.1);
+        console.log(n5,n6); // true false
+
+        // 安全整数
+        let n7 = Number.isSafeInteger(2 ** 53);
+        let n8 = Number.isSafeInteger(2 ** 53 - 1);
+        console.log(n7,n8); // false true
+
+
+        // math
+        // Math.trunc()  截断
+        console.log(Math.trunc(4.1)) // 4
+        console.log(Math.trunc(4.9)) // 4
+
+        // Math.sign() 
+        console.log(Math.sign(-50)); // -1
+        console.log(Math.sign(50)); // 1
+        console.log(Math.sign(0)); // 0
+        console.log(Math.sign(-0)); // -0
+
+        // Math.cbrt()
+        console.log(Math.cbrt(27)); // 3
+    </script>
+</body>
+</html>
