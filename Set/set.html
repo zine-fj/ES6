@@ -23,7 +23,7 @@
         setArr2.add('b');
         console.log(setArr2); // {'a','b'}
         let setArr3 = new Set().add(1).add('2').add('3');
-        console.log(setArr3);
+        console.log(setArr3); // {1, "2", "3"}
 
         // set删除
         setArr2.delete('b');
@@ -65,7 +65,7 @@
         // set用处 数组去重
         let arr1 = [1,2,4,5,6,4,3,5,6,7,9];
         let newArr = [...new Set(arr1)];
-        console.log(newArr);
+        console.log(newArr); // [1, 2, 4, 5, 6, 3, 7, 9]
 
         // set应用，数组中map，filter
         let set = new Set([1,2,3]);
